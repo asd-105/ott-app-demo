@@ -20,33 +20,33 @@ react-native-reanimated -> a very good and performant animation lib for RN and i
 
 To run tests: "yarn test" in root directory. (Or use any other script runner to run script "test")
 
-TODOs:
+# TODOs:
 
 -In general still needs to add state management, for example redux, that could also be used for 
 requests and data management/transformation with RTK query,
 
-# Catalog Improvements
+## Catalog Improvements
 - Currenlty the catalog is implemented using FlatList since that's the best match
         given the data that should be represented, hoever for future more complex list
         Nesting FlatLists inside a SectionList would be preferable to add ability to represent
         sorted data of multiple categories, for example video/movie genres
 - Improved flatlist scroll animation for smoother scroll and to fully scroll the focused element into view
   
-  # Style improvements
+  ## Style improvements
 - styles can be greatly improved making them scaleable by using app specific units that are calculated from screen dimensions multiplied by desired unit amount, for example instead of "lineHeight: 30" it would be "lineHeight: 30 x scale"
 - adding more style constants, such as margin/padding values that are commonly used to improve style consistency and avoid errors when writing styles
 - adding theme support for light/dark themes
-# Focus Improvements
+## Focus Improvements
 - Currently the default focus system on Android TV is used, however UX can be greatly improved implementing dedicated tv focus view components (from react native tvos) to create deliberate user-friendly focus flows
 
-# Video player improvements
+## Video player improvements
 - Either the current used library "expo-video" player can be improved with more config and custom controls or another video library could be used
 
-# Performance Improvements
+## Performance Improvements
 - Thanks to react 19 react compiler most of memoization and other unnecessary re-render prevention is done "automatically", however after doing most of above mentioned todos performance profiling should be performed to check for any extra re-renders, memory leaks, etc.
 - Video player performance should be investigated to see if it properly can stream/show all supported formats with adequate performance
 
-# Testing improvements
+## Testing improvements
 - Test scaffolding should be created to support mocking modules such as VideoPlayer and to run integration tests with expo library using expo-router
 - Adding test store wrapper for rendering components in test emvironment given that the todo about state management is done
 
@@ -64,8 +64,6 @@ and then choose the tv emulator from device list
 
 EXPO README BELOW
 ####################################
-
-![Android TV screen shot](https://github.com/douglowder/examples/assets/6577821/815c8e01-8275-4cc1-bd57-b9c8bce1fb02)
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 

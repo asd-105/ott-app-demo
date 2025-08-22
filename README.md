@@ -20,15 +20,24 @@ react-native-reanimated -> a very good and performant animation lib for RN and i
 
 To run tests: "yarn test" in root directory. (Or use any other script runner to run script "test")
 
-TODOs: 
+TODOs:
+
 -In general still needs to add state management, for example redux, that could also be used for 
 requests and data management/transformation with RTK query,
 
-- Currenlty implemented using FlatList since that's the best match
+# Catalog Improvements
+- Currenlty the catalog is implemented using FlatList since that's the best match
         given the data that should be represented, hoever for future more complex list
-        Nesting FlatLists inside a SectionList would be preferable to add ability represent
+        Nesting FlatLists inside a SectionList would be preferable to add ability to represent
         sorted data of multiple categories, for example video/movie genres
-
+- Improved flatlist scroll animation for smoother scroll and to fully scroll the focused element into view
+  
+  # Style improvements
+- styles can be greatly improved making them scaleable by using app specific units that are calculated from screen dimensions multiplied by desired unit amount, for example instead of "lineHeight: 30" it would be "lineHeight: 30 x scale"
+- adding more style constants, such as margin/padding values that are commonly used to improve style consistency and avoid errors when writing styles
+- adding theme support for light/dark themes
+# Focus Improvements
+- Currently the default focus system on Android TV is used, however UX can be greatly improved implementing dedicated tv focus view components (from react native tvos) to create deliberate user-friendly focus flows
 
 EXPO README BELOW
 ####################################

@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/ErrorCard/ErrorCard.tsx should match snapshot 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#5c5c5c",
+        "borderRadius": 16,
+        "flex": 1,
+        "height": "100%",
+        "justifyContent": "center",
+        "padding": 18,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "fontStyle": "italic",
+          "textAlign": "justify",
+        },
+        undefined,
+      ]
+    }
+  >
+    Oops! Something went wrong.
+  </Text>
+  <Text
+    style={
+      [
+        {
+          "fontSize": 18,
+          "fontStyle": "italic",
+          "textAlign": "justify",
+        },
+        undefined,
+      ]
+    }
+  >
+    We couldn’t start the video. Please check back later or contact us for assistance.
+  </Text>
+</View>
+`;

@@ -1,6 +1,38 @@
-# Expo Router TV demo 👋
 
-![Apple TV screen shot](https://github.com/douglowder/examples/assets/6577821/a881466f-a7a0-4c66-b1fc-33235c466997)
+# Steps How to Run this on Android Emulator
+Must have all pre-requisites 
+
+- Node.js (LTS) on macOS or Linux.
+- Android Studio (Iguana or later).
+- In the Android Studio SDK manager, select the dropdown for the Android SDK you are using (API version 31 or later),   and make sure an Android TV system image is selected for installation. (For Apple silicon, choose the ARM 64 image. Otherwise, choose the Intel x86_64 image).
+- After installing the Android TV system image, create an Android TV emulator using that image (the process is the same as creating an Android phone emulator).
+
+(Taken from https://docs.expo.dev/guides/building-for-tv/)
+
+Must Run on emulator using Expo development build, the TV focus system will not work properly via Expo-go.
+(https://docs.expo.dev/develop/development-builds/create-a-build/)
+
+Libraries used
+react-native-tvos -> default go to for react native apps on TV with great support
+using expo "package" -> used because it is a great wrapper for react-native and greatly helps with builds and managing native modules, also it provides routing and other related libraries such as "expo-video"
+react-native-reanimated -> a very good and performant animation lib for RN and it already was included in my expo config
+
+
+To run tests: "yarn test" in root directory. (Or use any other script runner to run script "test")
+
+TODOs: 
+-In general still needs to add state management, for example redux, that could also be used for 
+requests and data management/transformation with RTK query,
+
+- Currenlty implemented using FlatList since that's the best match
+        given the data that should be represented, hoever for future more complex list
+        Nesting FlatLists inside a SectionList would be preferable to add ability represent
+        sorted data of multiple categories, for example video/movie genres
+
+
+EXPO README BELOW
+####################################
+
 ![Android TV screen shot](https://github.com/douglowder/examples/assets/6577821/815c8e01-8275-4cc1-bd57-b9c8bce1fb02)
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
@@ -17,9 +49,7 @@ This project uses
 ```sh
 yarn
 yarn prebuild # Executes Expo prebuild with TV modifications
-yarn ios # Build and run for Apple TV
 yarn android # Build for Android TV
-yarn web # Run the project on web from localhost
 ```
 
 > **_NOTE:_**

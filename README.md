@@ -39,6 +39,29 @@ requests and data management/transformation with RTK query,
 # Focus Improvements
 - Currently the default focus system on Android TV is used, however UX can be greatly improved implementing dedicated tv focus view components (from react native tvos) to create deliberate user-friendly focus flows
 
+# Video player improvements
+- Either the current used library "expo-video" player can be improved with more config and custom controls or another video library could be used
+
+# Performance Improvements
+- Thanks to react 19 react compiler most of memoization and other unnecessary re-render prevention is done "automatically", however after doing most of above mentioned todos performance profiling should be performed to check for any extra re-renders, memory leaks, etc.
+- Video player performance should be investigated to see if it properly can stream/show all supported formats with adequate performance
+
+# Testing improvements
+- Test scaffolding should be created to support mocking modules such as VideoPlayer and to run integration tests with expo library using expo-router
+- Adding test store wrapper for rendering components in test emvironment given that the todo about state management is done
+
+REGARDING EXPO README BELOW AND RUŅING THE PROJECT ON ANDROID TV EMULATOR
+
+For fully working demo this should run off development build and the project should be prebuilt with the respective script.
+
+If running on windows amd having issues with setting the "EXPO_TV 1" variable, the first part of scripts setting the variable can be omitted.
+
+to run you can use
+
+"npx expo run:android --device"
+and then choose the tv emulator from device list
+
+
 EXPO README BELOW
 ####################################
 
@@ -65,43 +88,9 @@ yarn android # Build for Android TV
 > Setting the environment variable `EXPO_TV=1` enables the `@react-native-tvos/config-tv` plugin to modify the project for TV.
 > This can also be done by setting the parameter `isTV` to true in the `app.json`.
 
-## Development
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-This project includes a [demo](./components/EventHandlingDemo.tsx) showing how to use React Native TV APIs to highlight controls as the user navigates the screen with the remote control.
-
 ## Deploy
 
 Deploy on all platforms with Expo Application Services (EAS).
 
 - Deploy the website: `npx eas-cli deploy` — [Learn more](https://docs.expo.dev/eas/hosting/get-started/)
 - Deploy on iOS and Android using: `npx eas-cli build` — [Learn more](https://expo.dev/eas)
-
-## TV specific file extensions
-
-This project includes an [example Metro configuration](./metro.config.js) that allows Metro to resolve application source files with TV-specific code, indicated by specific file extensions (`*.ios.tv.tsx`, `*.android.tv.tsx`, `*.tv.tsx`). The [ExternalLink](./components/ExternalLink.tsx) component makes use of this by having a [separate TV source file](./components/ExternalLink.tv.tsx) that avoids importing packages that don't exist on Apple TV.
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/learn): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
